@@ -40,7 +40,7 @@ class Accounts extends React.Component{
                             {
                                 this.state.currIndex === 0?
                                 <EditAccounts onClick={this.changeCurrIndex.bind(this,0)}/>
-                                : 
+                                :
                                 <ChangePassword  onClick={this.changeCurrIndex.bind(this, 1)}/>
                             }
                         </section>

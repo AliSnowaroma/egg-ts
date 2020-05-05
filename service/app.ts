@@ -48,3 +48,11 @@
 //     return existUser;
 //   });
 // };
+
+import { Application } from 'egg';
+
+module.exports = (app:Application) => {
+    app.beforeStart(async function () {
+        await app.model.sync({ force: false }); // false 为不覆盖 true会删除再创建
+    });
+};

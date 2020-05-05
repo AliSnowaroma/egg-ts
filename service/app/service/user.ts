@@ -15,8 +15,9 @@ interface RegisterParams {
 }
 
 interface LoginParams {
-    email: string,
-    password: string
+    email?: string,
+    password: string,
+    userName?: string
 }
 
 export default class UserService extends Service {
@@ -42,8 +43,13 @@ export default class UserService extends Service {
             })
             return
         }
+        let userInfo
+        try{
+            userInfo = await this.ctx.model.User.create(user);
+        } catch(err){
+            console.log(err)
+        }
         
-        const userInfo = await this.ctx.model.User.create(user);
 
         // 注册成功，返回userid给前端
         ctx.status = 200;

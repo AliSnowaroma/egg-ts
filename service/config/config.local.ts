@@ -31,7 +31,7 @@ export default () => {
     port: 3306,
     database: 'learn',
     username: 'root',
-    password: 'touwohaozhesi',
+    password: '123456',
     operatorsAliases: false
   };
 

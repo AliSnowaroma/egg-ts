@@ -22,7 +22,7 @@ class UserController extends Controller {
     // 登录
     public async loginIn () {
         const {ctx} = this;
-        const {password, email} = ctx.request.body
+        const {password, email } = ctx.request.body
 
         // 登录
         const token = await ctx.service.user.login({password, email})
